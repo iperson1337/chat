@@ -1,0 +1,56 @@
+{
+    "name": "iperson1337/chat",
+    "description": "Chat Package for Laravel",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "chat",
+        "messaging",
+        "conversation"
+    ],
+    "require": {
+        "php": ">=7.3",
+        "laravel/framework": "^6.0|^7.0|^8.0",
+        "spatie/laravel-fractal": "^5.8",
+        "laravel/legacy-factories": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0|^9.0",
+        "orchestra/testbench": "^4.0|^6.0",
+        "mockery/mockery": "^1.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "iperson1337",
+            "email": "ideveloper1337@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Iperson1337\\Chat\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Iperson1337\\Chat\\Tests\\": "tests"
+        },
+        "files": [
+            "tests/Helpers/Models.php"
+        ]
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Iperson1337\\Chat\\ChatServiceProvider"
+            ],
+            "aliases": {
+                "Chat": "Iperson1337\\Chat\\Facades\\ChatFacade"
+            }
+        }
+    }
+}
