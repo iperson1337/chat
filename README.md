@@ -45,7 +45,8 @@ Create a Chat application for your multiple Models
 
 </details>
 
-Checkout a simple [Demo Application](https://github.com/iperson1337/chat-demo)
+Checkout a simple [Original rep](https://github.com/musonza/chat)
+Checkout a simple [Demo Application](https://github.com/musonza/chat-demo)
 
 ## Introduction
 
@@ -81,7 +82,7 @@ php artisan migrate
 
 You can mix Models as participants. For instance you can have `Parents`, `Students` and `Professors` models communicating
 
-#### Adding the ability to participate to a Model 
+#### Adding the ability to participate to a Model
 
 Add the `Iperson1337\Chat\Traits\Messageable` trait to any Model you want to participate in Conversations
 For example, let's say we want out `Bot` model to chat with other Models:
@@ -151,7 +152,7 @@ $conversation = Chat::createConversation($participants)->makeDirect();
 $conversation = Chat::makeDirect()->createConversation($participants);
 ```
 
-> **Note:** You will not be able to add additional participants to a direct conversation. 
+> **Note:** You will not be able to add additional participants to a direct conversation.
 Additionally you can't remove a participant from a direct conversation.
 
 #### Get a conversation by id
@@ -240,7 +241,7 @@ Chat::message($message)->setParticipant($participantModel)->delete();
 
 What to cleanup when all participants have deleted a `$message` or `$conversation`?
 
-Listen for `\Iperson1337\Chat\Eventing\AllParticipantsDeletedMessage` and 
+Listen for `\Iperson1337\Chat\Eventing\AllParticipantsDeletedMessage` and
 
 `\Iperson1337\Chat\Eventing\AllParticipantsClearedConversation`
 
@@ -373,7 +374,7 @@ Chat::conversation($conversation)
 
 #### Data Transformers
 
-Need to have more control on the data returned from the package routes? You can 
+Need to have more control on the data returned from the package routes? You can
 specify your own Model transformers and take advantage of [Fractal](http://fractal.thephpleague.com/).
 
 All you need to do is specify the location of your transformers in the configuration
@@ -389,11 +390,8 @@ file `iperson1337_chat.php` as follows:
     'participant' => \MyApp\Transformers\ParticipantTransformer::class,
 ]
 ```
-> **Note:** This only applies to responses from package routes. 
+> **Note:** This only applies to responses from package routes.
 
 ## License
 
 Chat is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
-
-
