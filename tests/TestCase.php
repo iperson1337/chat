@@ -2,8 +2,8 @@
 
 namespace Iperson1337\Chat\Tests;
 
-require __DIR__.'/../database/migrations/create_chat_tables.php';
-require __DIR__.'/Helpers/migrations.php';
+require __DIR__ . '/../database/migrations/create_chat_tables.php';
+require __DIR__ . '/Helpers/migrations.php';
 
 use CreateChatTables;
 use CreateTestTables;
@@ -36,7 +36,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         parent::setUp();
         $this->artisan('migrate', ['--database' => 'testbench']);
-        $this->withFactories(__DIR__.'/Helpers/factories');
+        $this->withFactories(__DIR__ . '/Helpers/factories');
         $this->migrate();
         $this->users = $this->createUsers(6);
         list($this->alpha, $this->bravo, $this->charlie, $this->delta) = $this->users;
